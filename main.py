@@ -33,12 +33,12 @@ while True:
             #Clear the screen 
             sys.stdout.write("\033c") 
             print("Pinpon Game")
-            print("Use W and S to move the paddle up and down.")
+            print("Use W and S to move the hand up and down.")
             print("——————————————————————————————————————————————" )
             
             for i in range(ROWS):  # Loop through all rows (0 to 20)
-                if i == p1:  # Render paddle at its position
-                    if i == ypos:  # If the ball is on the same row as the paddle
+                if i == p1:  # Render hand at its position
+                    if i == ypos:  # If the ball is on the same row as the hand
                         sys.stdout.write('☒☒☒'+ ' '+'🧤' + ' ' * (xpos) + '⚽' + ' ' * (38 - xpos) + '|' + '\n')
                     else:
                         sys.stdout.write('☒☒☒'+ ' '+'🧤' + ' ' * 40 + '|' + '\n')
@@ -89,7 +89,7 @@ while True:
                         xpos += 1
                         score += 1
                     else:
-                        sys.stdout.write("\033c") # If the ball hits the left wall and not the paddle, game over
+                        sys.stdout.write("\033c") # If the ball hits the left wall and not the hand, game over
                         print("Game Over!")
                         print("Your score is: ", score)
                         break
@@ -118,15 +118,15 @@ while True:
             sys.stdout.write("\033c")
             
             print("Pinpon Multiplayer Game")
-            print("Use W and S to move the left paddle up and down.")
+            print("Use W and S to move the left hand up and down.")
             
-            print("Use UP and DOWN arrow keys to move the right paddle up and down.")
+            print("Use UP and DOWN arrow keys to move the right hand up and down.")
             print("———————————————————————————————————————————————————")
             
             
             
             for i in range(ROWS):  # Loop through all rows (0 to 20)
-                if i == p1 and i == p2:  # Render both paddles at their positions
+                if i == p1 and i == p2:  # Render both hands at their positions
                     if i == ypos:
                         sys.stdout.write('☒☒☒'+ ' '+'🧤' + ' ' * (xpos) + '⚽' + ' ' * (36 - xpos) + '🧤' +' '+'☒☒☒'+'\n') #47
                     else:
@@ -201,7 +201,7 @@ while True:
                         xdir = 'right'
                         xpos += 1
                     else:
-                        sys.stdout.write("\033c") # If the ball hits the left wall and not the paddle, game over
+                        sys.stdout.write("\033c") # If the ball hits the left wall and not the hand, game over
                         print("Game Over!")
                         print("Player 2 wins!")
                         break
